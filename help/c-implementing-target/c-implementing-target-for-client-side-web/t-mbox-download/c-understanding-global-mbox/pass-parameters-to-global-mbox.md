@@ -49,8 +49,7 @@ The following is an example of how the code for the page might look:
     <title>Title here..</title> 
     <script type="text/javascript"> 
         function targetPageParams() { 
-           
-<b>return "p1=v1&p2=v2&p3=hello%20world"</b>; 
+          return "p1=v1&p2=v2&p3=hello%20world";
         } 
     </script> 
     <script src="mbox.js" type="text/javascript"></script> 
