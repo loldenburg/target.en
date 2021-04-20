@@ -47,3 +47,6 @@ The following articles help you understand how to implement [!DNL Target]:
 * [Email implementation](c-non-javascript-based-implementation/non-javascript-based-implementation.md)
 
   Information about implementing [!DNL Target] in non-JavaScript scenarios, such as using an AdBox or Redirector.
+  
+  
+  I want to make add my name here: Bob!
