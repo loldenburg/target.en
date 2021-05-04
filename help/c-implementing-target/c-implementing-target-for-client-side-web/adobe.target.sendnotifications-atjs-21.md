@@ -51,7 +51,7 @@ This function sends a notification to Target edge when an experience is rendered
 |Request > notifications > view > key|String|No|`<=` 512 characters.|View key. The key that was set with the view via the API.|
 |Request > notifications > view > state|String|No||View state token.|
 
-**Note**: The following characters are allowed for `Request > notifications > mbox > name`:
+**Note**: The following characters are *not* allowed for `Request > notifications > mbox > name`:
 
 ```
 - '-, ./=`:;&!@#$%^&*()+|?~[]{}'
