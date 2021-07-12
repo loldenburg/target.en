@@ -445,3 +445,11 @@ Fixed in the Target 17.2.2.0 release (February 24, 2017).
 Downloaded reports do not honor the Exclude Extreme Orders setting. (TGT-21871)
 
 Fixed in the Target 17.2.1.0 release.
+
+### Pages not loading in VEC or EEC when using Chrome version 80+
+
+* This known issue is regarding Chrome’s decision in changing the default behaviour of cookies without the SameSite Attribute starting with Chrome version 80.
+Before the change Chrome defaulted all cookies without the SameSite attribute to “SameSite=None” and now it defaults to “SameSite=Lax” and this changes the way cookies are sent on GET and POST requests.(for more information please see https://www.chromium.org/updates/same-site)
+
+* A fix has been found and deployed through Target-VEC-Helper chrome extension v0.5.3 but you can also disable the "SameSite by default cookies" flag from chrome://flags.
+
