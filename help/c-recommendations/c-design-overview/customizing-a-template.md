@@ -130,10 +130,10 @@ By default, Velocity templates treat all entity attributes as string values. You
 Suppose you want to reduce the displayed price of an item by $0.99 to apply a discount. You could use the following approach to achieve this result:
 
 ```
-#set( $Double = 0.1 )
+#set( $double = 0.1 )
 
 #if( $entity1.get('priceBeforeDiscount') != '' )
-    #set( $discountedPrice = $Double.parseDouble($entity1.get('priceBeforeDiscount')) - 0.99 )
+    #set( $discountedPrice = $double.parseDouble($entity1.get('priceBeforeDiscount')) - 0.99 )
     Item price: $$discountedPrice
 #else
     Item price unavailable
@@ -145,10 +145,10 @@ Suppose you want to reduce the displayed price of an item by $0.99 to apply a di
 Suppose you want to display an appropriate number of stars based on an item's numerical average customer rating. You could use the following approach to achieve this result:
 
 ```
-#set( $Double = 0.1 )
+#set( $double = 0.1 )
 
 #if( $entity1.get('rating') != '' )
-    #set( $rating = $Double.parseDouble($entity1.get('rating')) )
+    #set( $rating = $double.parseDouble($entity1.get('rating')) )
     #if( $rating >= 4.5 )
         <img src="5_stars.jpg">
     #elseif( $rating >= 3.5 )
