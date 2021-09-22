@@ -45,4 +45,4 @@ Sending in a JavaScript non-breaking space seems to do this. Have the developers
 
 ## Can I use a profile script in a Recommendations design? {#section_6BD55203984A4D80A0C6F241AD7806DF}
 
-Yes. However, you must add a backslash (\) before the $ in the profile script name.
+Yes. To use profile script, wrap the name in `\${...}`. For example, if your profile script is named `user.basket`, in design, you can use refer it as `\${user.basket}`. Note, the backslash implies that the profile script is not rendered by Velocity. Therefore, you cannot perform any operations on it in Velocity template. The value will be directly printed on the page.
