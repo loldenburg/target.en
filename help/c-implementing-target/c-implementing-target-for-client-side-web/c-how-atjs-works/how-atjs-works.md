@@ -40,7 +40,7 @@ The following diagrams help you understand the workflow of at.js 2.x with Views 
 |1|Call returns the [!DNL Experience Cloud ID] if the user is authenticated; another call syncs the customer ID.|
 |2|The at.js library loads synchronously and hides the document body.<br>at.js can also be loaded asynchronously with an optional prehiding snippet implemented on the page.|
 |3|A page load request is made including all configured parameters (MCID, SDID, and customer ID).|
-|4|Profile scripts execute and then feed into the Profile Store. The Store requests qualified audiences from the Audience Library (for example, audiences shared from Adobe Analytics, Audience Management, etc.).<br>Customer attributes are sent to the Profile Store in a batch process.|
+|4|Profile scripts execute and then feed into the Profile Store. The Store requests qualified audiences from the Audience Library (for example, audiences shared from Adobe Analytics, Audience Manager, etc.).<br>Customer attributes are sent to the Profile Store in a batch process.|
 |5|Based on URL request parameters and profile data, [!DNL Target] decides which activities and experiences to return to the visitor for the current page and future views.|
 |6|Targeted content is sent back to the page, optionally including profile values for additional personalization.<br>Targeted content on the current page is revealed as quickly as possible without flicker of default content.<br>Targeted content for views that are shown as a result of user actions in a SPA is cached in the browser so it can be instantly applied without an additional server call when the views are triggered through `triggerView()`.|
 |7|Analytics data is sent to Data Collection servers.|
