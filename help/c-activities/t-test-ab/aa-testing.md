@@ -13,7 +13,7 @@ Before performing an A/A test on your site using [!DNL Adobe Target], it is impo
 
 Before explaining A/A testing, it is good to review A/B testing so we can then discuss the differences.
 
-In a standard A/B test, traffic is allocated to two or more different experiences. One experience is typically the “control” and variations of the experience are tested against the control to see which experience creates the most lift in a given metric.
+In a standard A/B test, traffic is allocated to two or more different experiences. One experience is typically the “control," and variations of the experience are tested against the control to see which experience creates the most lift in a given metric.
 
 A/A testing, however, involves allocating traffic to two identical experiences, normally with a 50/50 traffic allocation split. With a standard A/B test, you typically want to discover a lift in conversion. This differs from an A/A test in which your goal is usually to determine that there is *no* difference in lift between the identical experiences.
 
@@ -31,13 +31,14 @@ Although few organizations run A/A tests, it is actually good practice to run th
 
 There are numerous reasons why you might see lift in one experience over the another (identical) experience:
 
-### The A/A test was not allowed to run long enough
+### The A/A test was monitored continually
 
-A common problem in running any kind of test, including an A/A test, is to prematurely stop a test and declare a winning experience. Analysts often do what is called “data peeking.” Data peeking involves looking at the test data early and frequently while trying to determine which experience is performing better. The risk is to stop the test prematurely, which could invalidate the results.
+A common problem in running any kind of test, including an A/A test, is to look at the results continually, and prematurely stop a test as soon as you see statistical significance, and declare a winning experience. Analysts often do what is called “data peeking.” Data peeking involves looking at the test data early and frequently while trying to determine which experience is performing better. The risk is to stop the test prematurely, which could invalidate the results.
 
-In an A/A test, data peeking can often cause analysts to see lift in one experience, when they assume that there should be no difference, because the two experiences are identical. Given time and sufficient visits the difference in lift should shrink.
+In an A/A test, data peeking can often cause analysts to see lift in one experience, when in fact there should be no difference, because the two experiences are identical. In fact, with continuous peeking, A/A tests are actually _guaranteed_ to show "statistical significance" (i.e. a confidence above some threshold, e.g. 95%) at some point during the test. 
 
-As with a regular A/B test, you should therefore decide ahead of time what sample size to use, based on the minimum effect size, power, and significance levels you find acceptable. In an A/A test, the goal would then be to *not* see a statistically significant result after your test has reached the desired sample size.
+To avoid this, and as with a regular A/B test, you should therefore decide ahead of time what sample size to use, based on the minimum effect size (i.e., the minimum lift below which an effect is not important to your business), power, and significance levels you find acceptable. 
+In an A/A test, the goal would then be to *not* see a statistically significant result after your test has reached the desired sample size.
 
 The [!UICONTROL Adobe Target Sample Size Calculator] is an important tool to help you determine what sample size you should aim for and how long you should run the test.
 
@@ -60,6 +61,6 @@ Suppose you want to achieve a 95% confidence level with your A/A test. With a 95
 
 If you decide that an A/A test is necessary in your organization, be aware that the identical experiences might temporarily show a difference from the control. This can be normal, depending on the time the test is allowed to run. The difference should shrink given more time and visitors.
 
-Best practice is to use regular A/B testing methodology: decide the sample size ahead of time based on a minimum effect size, desired power and significance by using the [Adobe Target Size Calculator](/help/c-activities/t-test-ab/sample-size-determination.md#section_6B8725BD704C4AFE939EF2A6B6E834E6).
+Best practice is to use regular A/B testing methodology: decide the sample size ahead of time based on a minimum relevant effect size, desired power and significance by using the [Adobe Target Size Calculator](/help/c-activities/t-test-ab/sample-size-determination.md#section_6B8725BD704C4AFE939EF2A6B6E834E6).
 
 Then, allow adequate time and visitors before you reach any conclusions, and remember that depending on the significance level of your test, there is a chance that one experience will show a difference in lift, and even be declared the winner.

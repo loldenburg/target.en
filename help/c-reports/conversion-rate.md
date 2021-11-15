@@ -1,13 +1,13 @@
 ---
 keywords: Targeting
-description: Learn how Adobe [!DNL Target] shows and calculates the conversion rate, lift, confidence (statistical significance), and confidence interval for each experience.
+description: Learn how Adobe [!DNL Target] shows and calculates the conversion rate, lift, confidence, and confidence interval for each experience.
 title: How Do I View the Conversion Rate, Lift, and Confidence Level?
 feature: Reports
 exl-id: b4cfe926-eb36-4ce1-b56c-7378150b0b09
 ---
 # Conversion rate
 
-The conversion rate, lift, confidence (statistical significance) and confidence interval are reported for each experience.
+The conversion rate, lift, confidence and confidence interval are reported for each experience.
 
 The following illustration shows the chart header for a sample activity with the [!UICONTROL Conversion Rate], [!UICONTROL Lift], and [!UICONTROL Confidence] headers highlighted.
 
@@ -39,44 +39,25 @@ Lift = (Experience CR - Control CR) / Control CR
 
 If control is 0, there is no percentage lift.
 
-## Confidence (Statistical Significance) {#section_35DB6724813D40C7B0808DE18FE595C1}
-
-This number represents the likelihood that the results would be duplicated if the test were run again. The confidence rounds up to 100.00% when the confidence is greater than or equal to 99.995%.
-
-See [Confidence Level and Confidence Interval](/help/c-reports/conversion-rate.md#concept_0D0002A1EBDF420E9C50E2A46F36629B).
 
 ## Retail Data {#section_30A674731BA6440E9BB93C421BE990EE}
 
 AOV, RPV, and Sales data are displayed for each experience if you inserted a Place Order (`orderConfirmPage`) mbox and selected it as the conversion mbox. 
 
-## Confidence Level and Confidence Interval {#concept_0D0002A1EBDF420E9C50E2A46F36629B}
+## Confidence and Confidence Interval {#concept_0D0002A1EBDF420E9C50E2A46F36629B}
 
-For each experience, confidence level and confidence interval are displayed.
-
-Conversions and continuous variables for Target-based metrics, such as revenue and engagement metrics, are calculated as follows:
-
-* **Conversion:** Either yes or no 
-* **All others:** Values across a range
+For each experience, the confidence and confidence interval are displayed.
 
 You can perform offline calculations for Analytics for Target (A4T), but it requires a step with data exports in [!DNL Analytics]. For more information, see "Performing Offline Calculations for Analytics for Target (A4T)" below.
 
-### Confidence Level {#section_26FE5E44BDD5478792A65FCFD83DCCDC}
+### Confidence {#section_26FE5E44BDD5478792A65FCFD83DCCDC}
 
-The *confidence level* is represented by the darker percentage in the Conversion Rate column for each experience.
+The confidence of an experience or offer that is displayed is a probability (expressed as a percentage) of obtaining a result less extreme than the one that is actually observed, if the null hypothesis is true, i.e. if there is no difference in conversion rates between that experience or offer, and the control experience/offer. In terms of p-values, this confidence displayed is 1 - p-value. Put more simply, higher confidence indicates that the data is less consistent with the assumption that the the control and non-control offer/experience have equal conversion rates. The confidence rounds up to 100.00% when the confidence is greater than or equal to 99.995%. 
 
 ![](assets/conf_report.png)  ![](assets/conf_report_detail.png)
 
-The confidence level, or statistical significance, indicates how likely it is that an experience's success was not due to chance. A higher confidence level indicates:
+Before making any business decisions, try to wait until your sample size is large enough and that the four bars of confidence on one or more experiences stays consistent for a continuous length of time to ensure the results are stable.
 
-* The experience is performing significantly different from control. 
-* The experience performance is not just due to noise. 
-* If you ran this test again, it is likely that you would see same results.
-
-If the confidence level is over 90% or 95%, then the result can be considered statistically significant. Before making any business decisions, try to wait until your sample size is large enough and that the four bars of confidence on one or more experiences stays consistent for a continuous length of time to ensure the results are stable.
-
->[!NOTE]
->
->The confidence rounds up to 100.00% when the confidence is greater than or equal to 99.995%.
 
 ### Confidence Interval {#section_F582738DFE1648C78B93D81EBC6CACF7}
 
@@ -84,11 +65,11 @@ If the confidence level is over 90% or 95%, then the result can be considered st
 >
 >Currently, the confidence interval is calculated only for binary metrics.
 
-The *confidence interval* is a range within which the true value can be found at a given confidence level. The confidence interval appears as a light gray +/- percentage in the Conversion Rate column. In the example below, the confidence interval for Experience B's lift is plus or minus 15.65%.
+The *confidence interval* is a range of estimates within which the true value of the metric can be found at a given confidence level. Target always displays 95% confidence intervals. The confidence interval appears as a light gray +/- percentage in the Conversion Rate column. In the example below, the confidence interval for Experience B's lift is plus or minus 15.65%.
 
 ![](assets/conversion_rate.png)
 
-**Example:** An experience's RPV is $10, its confidence level is 95% and its **confidence interval** is $5 to $15. If we ran this test multiple times, 95% of the time the RPV would be between $5 and $15.
+**Example:** An experience's observed RPV is $10, and its 95% **confidence interval** is $5 to $15. Unknown to us, its true RPV is $12. Then, if we ran this test multiple times, 95% of the time the confidence interval we calculate will contain the _true_ value of the RPV of $12. 
 
 **What impacts the confidence interval?** The formula follows standard statistical methods for calculating confidence intervals.
 
@@ -179,11 +160,11 @@ You can view reports by the following counting methodologies:
 >
 >Usually, counts are determined by cookies and session activity. However, if you reach the final conversion point of an activity and then re-enter the activity, you are considered a new entrant and a new visit to the activity. This is true even if your PCID and `sessionID` values do not change.
 
-## Why does [!DNL Target] recommend using Student's t-tests? {#t-test}
+## Why does [!DNL Target] recommend using t-tests? {#t-test}
 
 A/B tests are experiments to compare the mean value of some business metric in a control variant (also known as an experience) to the mean value of that same metric in one or more alternate experiences.
 
-[!DNL Target] recommends using two sample [Student's t-tests](https://en.wikipedia.org/wiki/Student%27s_t-test#:~:text=The%20t%2Dtest%20is%20any,the%20test%20statistic%20were%20known.), as these require fewer assumptions than alternatives like z-tests, and are the appropriate statistical test for doing pairwise comparisons of (quantitative) business metrics between a control experiences and alternate experiences. 
+[!DNL Target] recommends using [Welch's t-test](https://en.wikipedia.org/wiki/Welch%27s_t-test), as these require fewer assumptions than alternatives like z-tests, and are the appropriate statistical test for doing pairwise comparisons of (quantitative) business metrics between a control experiences and alternate experiences. 
 
 ### In more detail
 
@@ -191,11 +172,11 @@ When running online A/B tests, each user/visitor is randomly assigned to a singl
 
 Although the business metric itself might be distributed according to some arbitrary distribution, the distribution of the mean of this metric (within each variant) should converge to a normal distribution via the [Central Limit Theorem](https://en.wikipedia.org/wiki/Central_limit_theorem). Note that although there is no guarantee on how quickly this sampling distribution of the mean will converge to normal, this condition is typically achieved given the scale of visitors in online testing. 
 
-Given this normality of the mean, the test statistic to be used can be shown to follow a t-distribution, because it is the ratio of a normally distributed value (the difference in means of the business metric) to a scaling term based on an estimate from the data (the standard error of the difference in means). The **Student's t-test** is then the appropriate hypothesis test, given the test statistic follows a t-distribution.
+Given this normality of the mean, the test statistic to be used can be shown to follow a t-distribution, because it is the ratio of a normally distributed value (the difference in means of the business metric) to a scaling term based on an estimate from the data (the standard error of the difference in means). The **t-test** is then the appropriate hypothesis test, given the test statistic follows a t-distribution.
 
 ### Why other tests are not used
 
-A **z-test** is inappropriate because in the typical A/B testing scenario, the denominator of the test statistic is not a derived from a known variance, and instead must be estimated from the data. 
+A **z-test** is technically inappropriate because in the typical A/B testing scenario, the denominator of the test statistic is not a derived from a known variance, and instead must be estimated from the data. However for large enough sample sizes, the z-test and t-test are identical. 
 
 **Chi-squared tests** are not used because these are appropriate for determining whether there is a qualitative relationship between two variants (i.e. a null hypothesis that there is no difference between variants). T-tests are more appropriate for the scenario of _quantitatively_ comparing metrics.
 

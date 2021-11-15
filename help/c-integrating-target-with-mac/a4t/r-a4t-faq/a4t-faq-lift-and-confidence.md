@@ -19,7 +19,7 @@ Lift is the percent difference between your control page results and a successfu
 
 ## How is confidence calculated? {#section_97DB24D833E742988318CA65DA65DAD9}
 
-The confidence level is the probability that the measured conversion rate differs from the champion page conversion rate for reasons other than chance alone.
+The confidence level is a probability, expressed as a percentage, that is equal to 1 - p-value, where the p-value is computed from a t-test. See details [here](/help/c-reports/conversion-rate.md#concept_0D0002A1EBDF420E9C50E2A46F36629B)
 
 ## Why can't I see lift and confidence on calculated metrics? {#lift-confidence}
 
@@ -34,7 +34,7 @@ Examples of unsupported metrics or use cases include:
 
 ## How does A4T handle confidence calculations? {#section_66115EAF1BA34F7A8FCED7B08DA4F99C}
 
-A4T uses non-binary metric calculations with the sum of square data. The variance is calculated using the sum of squares data. Extreme orders are not considered. Also, the confidence calculation does not apply a Bonferroni correction for multiple offers.
+A4T computes confidence/p-values in a manner that is different to regular t-tests using binary metrics. Specifically, the calculations used by A4T allow for each user to have a continuous metric outcome (not just 1 or 0 for each user), so that the variance (or relatedly, the standard deviation) for each Experience must be calculated exactly. Extreme orders are not considered. Also, the confidence calculation does not apply a Bonferroni correction for multiple offers.
 
 ## Do lift and confidence work in Ad Hoc and Report Builder? If it's not native, can I do it in there myself? {#section_D8BB69AE700B4C5CB5FD28DB51F9A4E9}
 
