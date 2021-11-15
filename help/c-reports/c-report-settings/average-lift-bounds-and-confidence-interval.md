@@ -39,7 +39,7 @@ The length of the boxplot bar represents how large the confidence interval is in
 
 ### Confidence
 
-The confidence of an experience or offer that is displayed is a probability (expressed as a percentage) of obtaining a result _less extreme_ than the one that is actually observed, _if the null hypothesis is true_, i.e. if there is no difference in conversion rates between that experience or offer, and the control experience/offer. In terms of p-values, this confidence displayed is 1 - p-value. Put more simply, higher confidence indicates less evidence that the the control and non-control offer/experience have equal conversion rates. 
+The confidence of an experience or offer that is displayed is a probability (expressed as a percentage) of obtaining a result _less extreme_ than the one that is actually observed, _if the null hypothesis is true_, i.e. if there is no difference in conversion rates between that experience or offer, and the control experience/offer. In terms of p-values, this confidence displayed is 1 - p-value. Put more simply, higher confidence indicates that the data is less consistent with the assumption that the the control and non-control offer/experience have equal conversion rates. 
 
 ## Understand how the confidence interval for lift is determined {#pdf}
 
