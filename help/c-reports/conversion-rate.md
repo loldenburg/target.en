@@ -162,7 +162,7 @@ You can view reports by the following counting methodologies:
 >
 >Usually, counts are determined by cookies and session activity. However, if you reach the final conversion point of an activity and then re-enter the activity, you are considered a new entrant and a new visit to the activity. This is true even if your PCID and `sessionID` values do not change.
 
-## Why does [!DNL Target] recommend using Student's t-tests? {#t-test}
+## Why does [!DNL Target] recommend using t-tests? {#t-test}
 
 A/B tests are experiments to compare the mean value of some business metric in a control variant (also known as an experience) to the mean value of that same metric in one or more alternate experiences.
 
