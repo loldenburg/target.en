@@ -102,15 +102,15 @@ window.targetGlobalSettings = {
 This set up has a global effect, which means that every call made by at.js has **analyticsLogging: "client_side"** sent within the [!DNL Target] requests and an analytics payload is returned for every request. When this option is set up, the format of the payload that is returned looks like the following:
 
 ```javascript
-"analytics": {
+"analyticsDetails": [{
    "payload": {
       "pe": "tnt",
       "tnta": "167169:0:0|0|100,167169:0:0|2|100,167169:0:0|1|100"
    }
-}
+}]
 ```
 
-The payload can then be forwarded to Analytics via the [Data Insertion API](https://helpx.adobe.com/analytics/kb/data-insertion-api-post-method-adobe-analytics.html). For Auto-Allocate and Auto-Target activities, you must also forward the sessionId. For more information, see [Analytics for Target (A4T) reporting](https://adobetarget-sdks.gitbook.io/docs/integration-with-experience-cloud/analytics-for-target-a4t-reporting) in the *Adobe Target SDKs* guide. 
+The value from the `payload.tnta` property can then be forwarded to Analytics via the [Data Insertion API](https://helpx.adobe.com/analytics/kb/data-insertion-api-post-method-adobe-analytics.html) via the parameter `<a4t>`. For Auto-Allocate and Auto-Target activities, you must also forward the sessionId. For more information, see [Analytics for Target (A4T) reporting](https://adobetarget-sdks.gitbook.io/docs/integration-with-experience-cloud/analytics-for-target-a4t-reporting) in the *Adobe Target SDKs* guide. 
 
 If a global setting is not desired and a more on-demand approach is preferable, use the at.js function [getOffers()](/help/c-implementing-target/c-implementing-target-for-client-side-web/adobe-target-getoffers-atjs-2.md) by passing in **analyticsLogging: "client_side"**. The analytics payload is returned for this call only and the [!DNL Target] backend does not forward the payload to [!DNL Analytics]. By pursuing this approach, every at.js [!DNL Target] request returns the payload by default, but instead only when desired and specified. 
 
